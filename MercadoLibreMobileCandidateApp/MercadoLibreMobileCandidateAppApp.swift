@@ -25,7 +25,7 @@ struct MercadoLibreMobileCandidateAppApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            SearchViewWireframe.getSearchView()//ContentView()
         }
         .modelContainer(sharedModelContainer)
     }
