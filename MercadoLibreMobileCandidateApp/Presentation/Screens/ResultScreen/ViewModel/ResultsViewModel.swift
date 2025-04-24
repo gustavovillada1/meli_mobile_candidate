@@ -9,4 +9,8 @@ import Foundation
 
 extension SearchViewModel {
     
+    func didTapOnElement(for item: MobileCandidateProductModel) {
+        productSelected = item
+    }
+    
 }

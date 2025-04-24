@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "9165816A-B913-4D4D-A7DE-BD6E1D61CE81"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "756897E9-6E77-4FD9-95F4-CBF10E234506"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MercadoLibreMobileCandidateApp/Presentation/Screens/SearchScreen/ViewModel/SearchViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "onSearch()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "756897E9-6E77-4FD9-95F4-CBF10E234506 - ff1855aa1b024b7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MercadoLibreMobileCandidateApp.SearchViewModel.onSearch() -&gt; ()"
+                  moduleName = "MercadoLibreMobileCandidateApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/gustavoadolfovilladamolina/Documents/MercadoLibre/MercadoLibreMobileCandidateApp/MercadoLibreMobileCandidateApp/Presentation/Screens/SearchScreen/ViewModel/SearchViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  uuid = "756897E9-6E77-4FD9-95F4-CBF10E234506 - ff1855aa1b0259e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MercadoLibreMobileCandidateApp.SearchViewModel.onSearch() -&gt; ()"
+                  moduleName = "MercadoLibreMobileCandidateApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/gustavoadolfovilladamolina/Documents/MercadoLibre/MercadoLibreMobileCandidateApp/MercadoLibreMobileCandidateApp/Presentation/Screens/SearchScreen/ViewModel/SearchViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "244">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EEA62A67-7661-4670-B8E9-403D6B19CE17"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MercadoLibreMobileCandidateApp/Presentation/Screens/SearchScreen/Views/SearchView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "EEA62A67-7661-4670-B8E9-403D6B19CE17 - 4b8c9dd26e51838f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 () -&gt; SwiftUI.EmptyView in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(MercadoLibreMobileCandidateApp.TopBarCustom, SwiftUI.Spacer, SwiftUI.Text, SwiftUI.Text, MercadoLibreMobileCandidateApp.SearchBarCustom, SwiftUI.Spacer, &lt;&lt;opaque return type of SwiftUI.View.frame(width: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, height: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, alignment: SwiftUI.Alignment) -&gt; some&gt;&gt;.0, SwiftUI.Text)&gt;&gt;, SwiftUI.NavigationLink&lt;SwiftUI.EmptyView, MercadoLibreMobileCandidateApp.ResultsView&gt;)&gt; in MercadoLibreMobileCandidateApp.SearchView.body.getter : some"
+                  moduleName = "MercadoLibreMobileCandidateApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/gustavoadolfovilladamolina/Documents/MercadoLibre/MercadoLibreMobileCandidateApp/MercadoLibreMobileCandidateApp/Presentation/Screens/SearchScreen/Views/SearchView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  uuid = "EEA62A67-7661-4670-B8E9-403D6B19CE17 - f03597d2b6621874"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 () -&gt; SwiftUI.EmptyView in closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.ignoresSafeArea(_: SwiftUI.SafeAreaRegions, edges: SwiftUI.Edge.Set) -&gt; some&gt;&gt;.0, SwiftUI.NavigationLink&lt;SwiftUI.EmptyView, &lt;&lt;opaque return type of static MercadoLibreMobileCandidateApp.ResultViewWireframe.getResultView(viewModel: MercadoLibreMobileCandidateApp.SearchViewModel) -&gt; some&gt;&gt;.0&gt;)&gt; in MercadoLibreMobileCandidateApp.SearchView.body.getter : some"
+                  moduleName = "MercadoLibreMobileCandidateApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/gustavoadolfovilladamolina/Documents/MercadoLibre/MercadoLibreMobileCandidateApp/MercadoLibreMobileCandidateApp/Presentation/Screens/SearchScreen/Views/SearchView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "12">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FE23DB68-3789-449E-870A-5C6FFE3CA541"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MercadoLibreMobileCandidateApp/Presentation/Screens/SearchScreen/Views/SearchView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "FE23DB68-3789-449E-870A-5C6FFE3CA541 - c4b0f9404daaf242"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(MercadoLibreMobileCandidateApp.TopBarCustom, SwiftUI.Spacer, SwiftUI.Text, SwiftUI.Text, MercadoLibreMobileCandidateApp.SearchBarCustom, SwiftUI.Spacer, &lt;&lt;opaque return type of SwiftUI.View.frame(width: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, height: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, alignment: SwiftUI.Alignment) -&gt; some&gt;&gt;.0, SwiftUI.Text)&gt;&gt;, SwiftUI.NavigationLink&lt;SwiftUI.EmptyView, MercadoLibreMobileCandidateApp.ResultsView&gt;)&gt; in MercadoLibreMobileCandidateApp.SearchView.body.getter : some"
+                  moduleName = "MercadoLibreMobileCandidateApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/gustavoadolfovilladamolina/Documents/MercadoLibre/MercadoLibreMobileCandidateApp/MercadoLibreMobileCandidateApp/Presentation/Screens/SearchScreen/Views/SearchView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "1092">
+               </Location>
+               <Location
+                  uuid = "FE23DB68-3789-449E-870A-5C6FFE3CA541 - 95b496b000e46d29"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.ignoresSafeArea(_: SwiftUI.SafeAreaRegions, edges: SwiftUI.Edge.Set) -&gt; some&gt;&gt;.0, SwiftUI.NavigationLink&lt;SwiftUI.EmptyView, &lt;&lt;opaque return type of static MercadoLibreMobileCandidateApp.ResultViewWireframe.getResultView(viewModel: MercadoLibreMobileCandidateApp.SearchViewModel) -&gt; some&gt;&gt;.0&gt;)&gt; in MercadoLibreMobileCandidateApp.SearchView.body.getter : some"
+                  moduleName = "MercadoLibreMobileCandidateApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/gustavoadolfovilladamolina/Documents/MercadoLibre/MercadoLibreMobileCandidateApp/MercadoLibreMobileCandidateApp/Presentation/Screens/SearchScreen/Views/SearchView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "1292">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "82F35E94-15F5-45F7-B542-400315580763"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MercadoLibreMobileCandidateApp/Presentation/Screens/ResultScreen/ViewModel/ResultsViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
+            landmarkName = "didTapOnElement(for:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "17E14128-5812-4365-A4E0-AD7691996520"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MercadoLibreMobileCandidateApp/Presentation/Screens/ProductDetailScreen/Wireframe/ProductDetailViewWireframe.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "getProductDetailView(with:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C10D5639-F996-4ED5-9629-00779D4525F3"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MercadoLibreMobileCandidateApp/Presentation/Screens/ResultScreen/Views/ResultsView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2F3E0D06-C88C-46AA-859A-1100F22F0A2E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MercadoLibreMobileCandidateApp/Presentation/Screens/ResultScreen/ViewModel/ResultsViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
+            landmarkName = "didTapOnElement(for:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

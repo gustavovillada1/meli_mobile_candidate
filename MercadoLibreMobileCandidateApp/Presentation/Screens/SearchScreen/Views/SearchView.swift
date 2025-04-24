@@ -10,13 +10,31 @@ import SwiftUI
 struct SearchView<ViewModel: SearchViewModelProtocol>: View {
     
     // MARK: Properties
+    @Environment(\.presentationMode) var presentationMode
     @StateObject var viewModel: ViewModel
     @EnvironmentObject var navigation: MobileCandidateAppNavigation
     
     var body: some View {
+        ZStack {
+            VStack {
+                Spacer(minLength: 50)
+                contentView
+                Spacer()
+                footerView
+            }
+            .background(Color.yellow) // Establece el color de fondo del ZStack
+            .ignoresSafeArea()
+            NavigationLink(
+                destination: ResultViewWireframe.getResultView(viewModel: viewModel as! SearchViewModel),
+                isActive: $navigation.isResultsViewActive,
+                label: {}
+            )
+        }
+
+    }
+    
+    private var contentView: some View {
         VStack {
-            TopBarCustom(title: "Acá no va", showBackButton: false)
-            Spacer()
             Text("Hola,")
                 .fontWeight(.bold)
                 .font(.title)
@@ -24,15 +42,30 @@ struct SearchView<ViewModel: SearchViewModelProtocol>: View {
             SearchBarCustom(
                 text: $viewModel.query,
                 hintText: "¿Quizá un celular, ropa?",
-                onSearch: viewModel.onSearch
+                onSearch: {
+                    navigation.isResultsViewActive = true
+                    viewModel.onSearch()
+                }
             )
-            Spacer()
-            Image("mercado-libre-logo")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 100, height: 100)
-            Text("Prueba técnica")
-
+        }
+        .background(Color.white)
+        .padding(20) // Padding interior
+        .background(Color.white)
+        .cornerRadius(16) // Bordes redondeados
+        .shadow(color: .gray.opacity(0.3), radius: 8, x: 0, y: 4) // Sombra
+        .padding(.horizontal, 16)
+    }
+    
+    private var footerView: some View {
+        VStack {
+            HStack {
+                Icons().mercadoLibreLogo
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 80, height: 80)
+                Text("Prueba técnica")
+                    .font(.caption)
+            }
         }
     }
 }

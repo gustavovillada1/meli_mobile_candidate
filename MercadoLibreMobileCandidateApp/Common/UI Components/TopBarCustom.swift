@@ -9,14 +9,15 @@ import SwiftUI
 
 struct TopBarCustom: View {
     let title: String
-    let showBackButton: Bool
     var onBack: (() -> Void)? = nil
-
+    var trailingIcon: Image? = Icons().search
+    var trailingAction: (() -> Void)? = nil
+    
     var body: some View {
         HStack {
-            if showBackButton {
+            if let onBack: () -> Void = onBack {
                 Button(action: {
-                    onBack?()
+                    onBack()
                 }) {
                     Image(systemName: "chevron.left")
                         .foregroundColor(.blue)
@@ -30,7 +31,18 @@ struct TopBarCustom: View {
                 .font(.headline)
                 .bold()
             Spacer()
-            Spacer().frame(width: UIConstants().topBarHeight)
+            if let trailingAction: () -> Void = trailingAction {
+                Button(action: {
+                    trailingAction()
+                }) {
+                    trailingIcon
+                        .foregroundColor(.blue)
+                        .padding(.leading)
+                }
+                .padding(.trailing, UIConstants().trailingIconPadding)
+            } else {
+                Spacer().frame(width: UIConstants().topBarHeight)
+            }
         }
         .frame(height: UIConstants().topBarHeight)
         .background(Color(UIColor.systemBackground))
@@ -39,5 +51,5 @@ struct TopBarCustom: View {
 }
 
 #Preview {
-    TopBarCustom(title: "Title", showBackButton: true)
+    TopBarCustom(title: "Title")
 }

@@ -9,8 +9,8 @@ import Foundation
 
 final class MobileCandidateAppNavigation: ObservableObject {
 
-    var isSearchViewActive: Bool = false
-    var isResultsViewActive: Bool = false
-    var isProductDetailViewActive: Bool = false
+    @Published var isSearchViewActive: Bool = false
+    @Published var isResultsViewActive: Bool = false
+    @Published var isProductDetailViewActive: Bool = false
 
 }

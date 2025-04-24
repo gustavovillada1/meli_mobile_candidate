@@ -7,14 +7,15 @@
 
 import SwiftUI
 
-final class SearchViewWireframe {
+public struct SearchViewWireframe {
     
-    static func getSearchView() -> some View {
+    @ViewBuilder
+    public static func getSearchView() -> some View {
         let navigation: MobileCandidateAppNavigation = MobileCandidateAppNavigation()
         let viewModel: SearchViewModel = createViewModel()
         let rootView: SearchView = SearchView(viewModel: viewModel)
         
-        return NavigationView {
+        NavigationView {
             rootView
         }
         .environmentObject(navigation)
@@ -23,6 +24,25 @@ final class SearchViewWireframe {
     }
     
     private static func createViewModel() -> SearchViewModel {
-        return SearchViewModel()
+        let apiManager: MobileCandidateAPIDataManager = MobileCandidateAPIDataManager()
+        
+        let errorMapper: MobileCandidateErrorMapper = MobileCandidateErrorMapper()
+        
+        let dataMapper: MobileCandidateRepositoryDataMapper = MobileCandidateRepositoryDataMapper()
+        
+        let repository: MobileCandidateRepository = MobileCandidateRepository(
+            errorMapper: errorMapper,
+            dataMapper: dataMapper,
+            apiManager: apiManager
+        )
+        
+        let domainMapper: MobileCandidateDomainMapper = MobileCandidateDomainMapper()
+        
+        let searchProductsUseCase: SearchProductUseCase = SearchProductUseCase(
+            repository: repository,
+            domainMapper: domainMapper
+        )
+        
+        return SearchViewModel(searchProductsUseCase: searchProductsUseCase)
     }
 }

@@ -9,5 +9,10 @@ import Foundation
 import Combine
 
 protocol MobileCandidateAPIDataManagerProtocol {
-    func searchProducts(for query: String) -> AnyPublisher< MobileCandidateSearchProductDTO, Error>
+    
+    // MARK: Search Screen
+    func getProducts(for query: String) -> AnyPublisher< MobileCandidateProductResultsDTO, Error>
+    
+    // MARK: Product Detail Screen
+    func getProductDetail(for itemId: String) -> AnyPublisher<MobileCandidateProductDTO, Error>
 }
