@@ -9,25 +9,31 @@ import Foundation
 import Combine
 
 class MobileCandidateAPIDataManager: MobileCandidateAPIDataManagerProtocol {
-    private let baseURL = "https://api.mercadolibre.com"
+    private let baseURL: String = "https://api.mercadolibre.com"
+    private let searchProductsEndPoint: String = "/sites/MCO/search?q="
 
     private typealias productDetailResponse = AnyPublisher<MobileCandidateProductDTO, Error>
     
-    func getProducts(for query: String) -> AnyPublisher<MobileCandidateProductResultsDTO, Error> {
-        let urlString = "\(baseURL)/sites/MLA/search?q=\(query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "")"
+    func searchProducts(for query: String) -> AnyPublisher<MobileCandidateSearchProductsResultDTO, Error> {
+        let urlString = "\(baseURL)\(searchProductsEndPoint)\(query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "")"
 
         guard let url = URL(string: urlString) else {
             return Fail(error: URLError(.badURL)).eraseToAnyPublisher()
         }
-
-        let request = makeRequest(url: url, headers: [
-            "Content-Type": "application/json"
-            // "Authorization": "Bearer <token>" // si necesitas autenticación
-        ])
-
-        return URLSession.shared.dataTaskPublisher(for: request)
-            .map(\.data)
-            .decode(type: MobileCandidateProductResultsDTO.self, decoder: JSONDecoder())
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        //request.setValue("Bearer APP_USR-7810428096286422-042417-5d09b9bfdbc9597d956ee643e52be895-188204268", forHTTPHeaderField: "Authorization")
+        
+        return URLSession.shared.dataTaskPublisher(for: url)
+            //.map(\.data)
+            .map { output in
+                if let jsonString = String(data: output.data, encoding: .utf8) {
+                    print("Response Data: \(jsonString)")
+                }
+                return output.data
+            }
+            .decode(type: MobileCandidateSearchProductsResultDTO.self, decoder: JSONDecoder())
             .receive(on: DispatchQueue.main)
             .eraseToAnyPublisher()
     }
@@ -39,10 +45,9 @@ class MobileCandidateAPIDataManager: MobileCandidateAPIDataManagerProtocol {
             return Fail(error: URLError(.badURL)).eraseToAnyPublisher()
         }
         
-        let request = makeRequest(url: url, headers: [
-            "Content-Type": "application/json"
-            // "Authorization": "Bearer <token>" // si necesitas autenticación
-        ])
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        //request.setValue("Bearer APP_USR-7810428096286422-042417-5d09b9bfdbc9597d956ee643e52be895-188204268", forHTTPHeaderField: "Authorization")
         
         return URLSession.shared.dataTaskPublisher(for: request)
             .map(\.data)
@@ -50,7 +55,7 @@ class MobileCandidateAPIDataManager: MobileCandidateAPIDataManagerProtocol {
             .receive(on: DispatchQueue.main)
             .eraseToAnyPublisher()
     }
-    
+    /*
     private func makeRequest(url: URL, headers: [String: String] = [:]) -> URLRequest {
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
@@ -58,7 +63,7 @@ class MobileCandidateAPIDataManager: MobileCandidateAPIDataManagerProtocol {
             request.setValue(value, forHTTPHeaderField: key)
         }
         return request
-    }
+    }*/
 }
 
 

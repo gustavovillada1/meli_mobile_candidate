@@ -11,7 +11,7 @@ import Combine
 protocol MobileCandidateAPIDataManagerProtocol {
     
     // MARK: Search Screen
-    func getProducts(for query: String) -> AnyPublisher< MobileCandidateProductResultsDTO, Error>
+    func searchProducts(for query: String) -> AnyPublisher< MobileCandidateSearchProductsResultDTO, Error>
     
     // MARK: Product Detail Screen
     func getProductDetail(for itemId: String) -> AnyPublisher<MobileCandidateProductDTO, Error>

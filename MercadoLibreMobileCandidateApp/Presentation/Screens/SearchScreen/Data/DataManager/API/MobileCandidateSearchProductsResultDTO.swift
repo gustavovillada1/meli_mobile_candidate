@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct MobileCandidateProductResultsDTO: Decodable {
+struct MobileCandidateSearchProductsResultDTO: Decodable {
     
 }

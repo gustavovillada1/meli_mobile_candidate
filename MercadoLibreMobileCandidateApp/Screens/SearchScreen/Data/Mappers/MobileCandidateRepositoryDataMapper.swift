@@ -13,7 +13,7 @@ class MobileCandidateRepositoryDataMapper {
         return MobileCandidateProductDomainModel()
     }
     
-    func mapProductsResultData(_ dto: MobileCandidateProductResultsDTO) -> MobileCandidateResultsDomainModel {
+    func mapProductsResultData(_ dto: MobileCandidateSearchProductsResultDTO) -> MobileCandidateResultsDomainModel {
         return MobileCandidateResultsDomainModel()
     }
 }

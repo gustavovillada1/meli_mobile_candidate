@@ -24,7 +24,7 @@ class MobileCandidateRepository: MobileCandidateRepositoryProtocol {
     }
     
     func getProducts(for query: String) -> AnyPublisher<MobileCandidateResultsDomainModel, MobileCandidateAPIError> {
-        apiManager.getProducts(for: query)
+        apiManager.searchProducts(for: query)
             .map(dataMapper.mapProductsResultData)
             .mapError(errorMapper.mapToLocalError)
             .eraseToAnyPublisher()
