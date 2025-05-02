@@ -49,7 +49,3 @@ struct TopBarCustom: View {
         .overlay(Divider(), alignment: .bottom)
     }
 }
-
-#Preview {
-    TopBarCustom(title: "Title")
-}

@@ -24,22 +24,21 @@ struct ErrorView: View {
     
     var body: some View {
         VStack(spacing: 20) {
-            Spacer() // Empuja el contenido hacia el centro
-            
-            Image(systemName: "exclamationmark.triangle.fill") // Icono más moderno
+            Spacer()
+            Image(systemName: "exclamationmark.triangle.fill")
                 .font(.system(size: 50))
-                .foregroundColor(.orange) // Color más suave
+                .foregroundColor(.orange)
             
             Text("¡Oops! Algo salió mal")
-                .font(.title2) // Fuente más grande
+                .font(.title2)
                 .fontWeight(.semibold)
                 .foregroundColor(.primary)
             
             Text(error.localizedDescription)
-                .font(.body) // Fuente más legible
+                .font(.body)
                 .foregroundColor(.secondary)
                 .multilineTextAlignment(.center)
-                .padding(.horizontal, 30) // Más padding horizontal
+                .padding(.horizontal, 30)
             
             VStack(spacing: 15) {
                 if let retry = didTapOnRetry {

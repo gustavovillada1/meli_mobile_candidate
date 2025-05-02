@@ -100,7 +100,7 @@ struct ProductDetailView<ViewModel: ProductDetailViewModelProtocol>: View {
                         .padding(.top)
                     
                     
-                    Text("Características del producto")
+                    Text(viewModel.localizables.productDetailScreenProductAttributesTitle)
                         .font(.title3)
                         .fontWeight(.semibold)
                         .padding(.top, 40)

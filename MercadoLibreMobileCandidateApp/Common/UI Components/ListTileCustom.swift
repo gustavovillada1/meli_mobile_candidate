@@ -54,7 +54,7 @@ struct ListTileCustom: View {
                 if let price = price {
                     Text(price)
                         .font(.system(size: 16, weight: .bold))
-                        .foregroundColor(Color.meliGreen) // Usando el color definido
+                        .foregroundColor(Color.meliGreen)
                         .lineLimit(1)
                 }
             }
@@ -109,8 +109,6 @@ struct ListTileCustom: View {
     }
 }
 
-
-// Ejemplo de uso
 #Preview {
     VStack {
         ListTileCustom("iPhone 15 Pro Max")
