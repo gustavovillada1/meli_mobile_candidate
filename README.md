@@ -6,7 +6,7 @@
 
 Busca productos y ve sus detalles con una interfaz moderna en SwiftUI.
 
-https://github.com/user-attachments/assets/6344276e-f95e-48b9-ad7e-eac5cfc9e461
+https://github.com/user-attachments/assets/9677ecb4-507d-4943-a857-c9cd5124a3e3
 
 
 ## 🛠️ Tecnologías Clave 🛠️
