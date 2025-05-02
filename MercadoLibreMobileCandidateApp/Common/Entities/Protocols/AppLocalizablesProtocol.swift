@@ -21,6 +21,9 @@ protocol AppLocalizablesProtocol {
     var searchScreenHelloSubtitleString: String { get }
     var searchScreenTextFieldHintString: String { get }
     
+    // MARK: Results Screen
+    var resultsScreenLoadingSubMessagge: String { get }
+    
     // MARK: Product Detail Screen
     var productDetailScreenSoldQuantitySubfixString: String { get }
     var productDetailScreenProductAttributesTitle: String { get }

@@ -43,18 +43,11 @@ struct ProductDetailView<ViewModel: ProductDetailViewModelProtocol>: View {
     }
     
     private var skeletonView: some View {
-        VStack(spacing: 16) {
-            ProgressView()
-                .progressViewStyle(CircularProgressViewStyle(tint: .yellow))
-                .scaleEffect(1.5)
-
-            Text("Buscando...")
-                .font(.headline)
-                .foregroundColor(.gray)
-        }
+        LoadingView(
+            message: "Cargando...",
+            subMessage: "Estas a punto de ver un gran producto"
+        )
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color(.systemBackground).opacity(0.8))
-        .edgesIgnoringSafeArea(.all)
     }
     
     private var contentView: some View {

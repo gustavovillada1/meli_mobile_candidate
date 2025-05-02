@@ -22,7 +22,7 @@ class LocalDataManager: LocalDataManagerProtocol {
     func getProductDetailJson() -> AnyPublisher<ProductDetailDTO, Error> {
         loadLocalJson(fileName: productDetailJson, modelType: ProductDetailDTO.self)
     }
-        
+    
     /// Loads and decodes a local JSON file into a specified Decodable model type.
     /// - Parameters:
     ///   - fileName: The name of the JSON file (without extension).
@@ -47,3 +47,4 @@ class LocalDataManager: LocalDataManagerProtocol {
     }
     
 }
+

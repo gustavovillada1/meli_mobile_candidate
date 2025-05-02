@@ -35,6 +35,12 @@
 		449929132DC42C9500F75256 /* AppLocalizablesProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449929122DC42C9500F75256 /* AppLocalizablesProtocol.swift */; };
 		449929152DC42DBF00F75256 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449929142DC42DBF00F75256 /* StringExtension.swift */; };
 		449929172DC445FE00F75256 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449929162DC445FE00F75256 /* ErrorView.swift */; };
+		449929192DC4653B00F75256 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449929182DC4653B00F75256 /* LoadingView.swift */; };
+		4499291B2DC46BCB00F75256 /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4499291A2DC46BCB00F75256 /* FooterView.swift */; };
+		4499291F2DC46E1100F75256 /* ScreenConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4499291E2DC46E1100F75256 /* ScreenConstants.swift */; };
+		449929242DC480F200F75256 /* APIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449929232DC480F200F75256 /* APIConfig.swift */; };
+		449929262DC4810100F75256 /* NetworkClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449929252DC4810100F75256 /* NetworkClientProtocol.swift */; };
+		449929282DC4886C00F75256 /* DefaultNetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449929272DC4886C00F75256 /* DefaultNetworkClient.swift */; };
 		449DC6CF2DB89A3700CAA1C2 /* NetworkDataManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449DC6CE2DB89A3700CAA1C2 /* NetworkDataManagerProtocol.swift */; };
 		449DC6D32DB89DC300CAA1C2 /* SearchProductResultsDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449DC6D22DB89DC300CAA1C2 /* SearchProductResultsDTO.swift */; };
 		449DC6D52DB8C06800CAA1C2 /* ProductDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449DC6D42DB8C06800CAA1C2 /* ProductDetailView.swift */; };
@@ -123,6 +129,12 @@
 		449929122DC42C9500F75256 /* AppLocalizablesProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLocalizablesProtocol.swift; sourceTree = "<group>"; };
 		449929142DC42DBF00F75256 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		449929162DC445FE00F75256 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		449929182DC4653B00F75256 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		4499291A2DC46BCB00F75256 /* FooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
+		4499291E2DC46E1100F75256 /* ScreenConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenConstants.swift; sourceTree = "<group>"; };
+		449929232DC480F200F75256 /* APIConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfig.swift; sourceTree = "<group>"; };
+		449929252DC4810100F75256 /* NetworkClientProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClientProtocol.swift; sourceTree = "<group>"; };
+		449929272DC4886C00F75256 /* DefaultNetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultNetworkClient.swift; sourceTree = "<group>"; };
 		449DC6CE2DB89A3700CAA1C2 /* NetworkDataManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataManagerProtocol.swift; sourceTree = "<group>"; };
 		449DC6D22DB89DC300CAA1C2 /* SearchProductResultsDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SearchProductResultsDTO.swift; path = MercadoLibreMobileCandidateApp/Presentation/Screens/SearchScreen/Data/DataManager/API/SearchProductResultsDTO.swift; sourceTree = SOURCE_ROOT; };
 		449DC6D42DB8C06800CAA1C2 /* ProductDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailView.swift; sourceTree = "<group>"; };
@@ -303,6 +315,24 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		4499291D2DC46DEC00F75256 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				4499291E2DC46E1100F75256 /* ScreenConstants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		449929222DC480E100F75256 /* API Config */ = {
+			isa = PBXGroup;
+			children = (
+				449929232DC480F200F75256 /* APIConfig.swift */,
+				449929252DC4810100F75256 /* NetworkClientProtocol.swift */,
+				449929272DC4886C00F75256 /* DefaultNetworkClient.swift */,
+			);
+			path = "API Config";
+			sourceTree = "<group>";
+		};
 		449DC6C12DB8989600CAA1C2 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
@@ -348,6 +378,7 @@
 		449DC6C52DB898E200CAA1C2 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				449929222DC480E100F75256 /* API Config */,
 				449DC7112DB99B9200CAA1C2 /* Entities */,
 				449DC70C2DB9937F00CAA1C2 /* Mappers */,
 				449DC7042DB991B000CAA1C2 /* Repository */,
@@ -361,6 +392,7 @@
 		449DC6C82DB8992200CAA1C2 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				4499291D2DC46DEC00F75256 /* Constants */,
 				4499290A2DC4113700F75256 /* Utils */,
 				449DC7162DB9A11600CAA1C2 /* Entities */,
 				449DC6C12DB8989600CAA1C2 /* Screens */,
@@ -447,6 +479,8 @@
 				449DC6ED2DB8CB9D00CAA1C2 /* SearchBarCustom.swift */,
 				449DC6EF2DB8CD2800CAA1C2 /* ListTileCustom.swift */,
 				449929162DC445FE00F75256 /* ErrorView.swift */,
+				449929182DC4653B00F75256 /* LoadingView.swift */,
+				4499291A2DC46BCB00F75256 /* FooterView.swift */,
 			);
 			path = "UI Components";
 			sourceTree = "<group>";
@@ -743,6 +777,7 @@
 				449929012DC3EC1300F75256 /* ProductDetailAttributeDomainModel.swift in Sources */,
 				449DC6EC2DB8C93100CAA1C2 /* UIConstants.swift in Sources */,
 				449DC6CF2DB89A3700CAA1C2 /* NetworkDataManagerProtocol.swift in Sources */,
+				449929192DC4653B00F75256 /* LoadingView.swift in Sources */,
 				449929072DC3EEFC00F75256 /* ProductDetailAttributeModel.swift in Sources */,
 				449DC7222DB9EBFD00CAA1C2 /* Icons.swift in Sources */,
 				449DC7292DB9ED1F00CAA1C2 /* ProductDetailViewModel.swift in Sources */,
@@ -762,13 +797,18 @@
 				449DC7242DB9ECCF00CAA1C2 /* ProductDetailViewWireframe.swift in Sources */,
 				449928F92DC3E4EE00F75256 /* ProductDetailPictureDTO.swift in Sources */,
 				449DC72C2DB9F13500CAA1C2 /* ProductDetailViewDependencies.swift in Sources */,
+				449929282DC4886C00F75256 /* DefaultNetworkClient.swift in Sources */,
 				449DC6F52DB8D36600CAA1C2 /* ResultsViewModel.swift in Sources */,
 				449928F52DC3E4AB00F75256 /* SearchProductResultsPagingDTO.swift in Sources */,
 				449DC7152DB99BEB00CAA1C2 /* NetworkErrorMapper.swift in Sources */,
 				445B60072DB8715A007AF959 /* MercadoLibreMobileCandidateAppApp.swift in Sources */,
 				449DC7132DB99BA200CAA1C2 /* AppError.swift in Sources */,
+				4499291F2DC46E1100F75256 /* ScreenConstants.swift in Sources */,
+				449929262DC4810100F75256 /* NetworkClientProtocol.swift in Sources */,
 				449929102DC42C6F00F75256 /* AppLocalizables.swift in Sources */,
+				4499291B2DC46BCB00F75256 /* FooterView.swift in Sources */,
 				449DC6EE2DB8CB9D00CAA1C2 /* SearchBarCustom.swift in Sources */,
+				449929242DC480F200F75256 /* APIConfig.swift in Sources */,
 				449DC7032DB98E0200CAA1C2 /* NetworkDataManager.swift in Sources */,
 				449DC7272DB9ECFF00CAA1C2 /* ProductDetailViewModelProtocol.swift in Sources */,
 				449DC6FF2DB9887000CAA1C2 /* ResultViewWireframe.swift in Sources */,

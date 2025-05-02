@@ -11,6 +11,7 @@ protocol ProductDetailViewModelProtocol: ObservableObject {
     
     // MARK: Objects
     var localizables: AppLocalizables { get }
+    var constants: ScreenConstants { get }
     var dependencies: ProductDetailViewDependencies { get }
     var appError: AppError? { get set }
     var shouldLoadFromJSON: Bool { get set }

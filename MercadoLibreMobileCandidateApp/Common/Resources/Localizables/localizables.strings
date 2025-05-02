@@ -17,6 +17,9 @@
 "search_screen_hello_subtitle_string" = "¿Qué deseas buscar hoy?";
 "search_screen_textfield_hint_string" = "Quizá un celular...";
 
+// MARK: Results screen
+"results_screen_loading_sub_messagge" = "¡Te espera lo mejor!";
+
 // MARK: Product detail screen
 "product_detail_screen_sold_quantity_subfix_string" = "Vendidos";
 "product_detail_screen_product_attributes_title"    = "Características del producto";

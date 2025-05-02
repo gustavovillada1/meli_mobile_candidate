@@ -8,10 +8,13 @@
 import SwiftUI
 
 struct ResultsView<ViewModel: SearchViewModel>: View {
+    
+    // MARK: Attributes
     @StateObject var viewModel: ViewModel
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var navigation: MobileCandidateAppNavigation
     
+    // MARK: Body
     var body: some View {
         ZStack() {
             VStack {
@@ -32,37 +35,10 @@ struct ResultsView<ViewModel: SearchViewModel>: View {
         }
     }
     
-    private var footerView: some View {
-        VStack {
-            HStack {
-                Icons().mercadoLibreLogo
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 80, height: 40)
-                Text(viewModel.localizables.technicalTest)
-                    .font(.caption)
-            }
-        }
-    }
-    
-    private var skeletonView: some View {
-        VStack(spacing: 16) {
-            ProgressView()
-                .progressViewStyle(CircularProgressViewStyle(tint: .yellow))
-                .scaleEffect(1.5)
-            
-            Text("\(viewModel.localizables.loadingString)...")
-                .font(.headline)
-                .foregroundColor(.gray)
-        }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color(.systemBackground).opacity(0.8))
-        .edgesIgnoringSafeArea(.all)
-    }
-    
+    // MARK: Views
     private var contentView: some View {
         ScrollView {
-            VStack(spacing: 16) {
+            VStack(spacing: viewModel.constants.resultViewVerticalSpacing) {
                 if let error: AppError = viewModel.errorType {
                     ErrorView(
                         error: error,
@@ -76,7 +52,7 @@ struct ResultsView<ViewModel: SearchViewModel>: View {
                 } else {
                     resultsHeaderView
                     
-                    LazyVStack(spacing: 16) {
+                    LazyVStack(spacing: viewModel.constants.resultViewVerticalSpacing) {
                         ForEach(viewModel.products, id: \.id) { product in
                             ListTileCustom(product.title)
                                 .subtitle(ProductDetailAttributesHelper.getConditionString(product.condition))
@@ -86,20 +62,19 @@ struct ResultsView<ViewModel: SearchViewModel>: View {
                                     navigation.isProductDetailViewActive = true
                                     viewModel.didTapOnElement(for: product.id)
                                 }
-                            
                         }
                     }
                 }
                 
-                Spacer(minLength: 20)
+                Spacer()
                 footerView
             }
-            .padding(10)
+            .padding(viewModel.constants.resultViewContentPadding)
         }
     }
     
     private var resultsHeaderView: some View {
-        VStack(alignment: .leading, spacing: 4) {
+        VStack(alignment: .leading, spacing: viewModel.constants.resultsHeaderViewVerticalSpacing) {
             Text(viewModel.query)
                 .font(.title3)
                 .fontWeight(.semibold)
@@ -107,12 +82,20 @@ struct ResultsView<ViewModel: SearchViewModel>: View {
             Text("\(viewModel.products.count) \(viewModel.localizables.resultsString.lowercased())")
                 .font(.subheadline)
                 .foregroundColor(.secondary)
-                .padding(.bottom, 10)
+                .padding(.bottom, viewModel.constants.resultViewContentPadding)
         }
     }
     
     private var emptyResultsView: some View {
         VStack { }
+    }
+    
+    private var footerView: some View {
+        FooterView()
+    }
+    
+    private var skeletonView: some View {
+        LoadingView(message: "\(viewModel.localizables.loadingString)...", subMessage: viewModel.localizables.resultsScreenLoadingSubMessagge)
     }
     
     private var topBarView: some View {

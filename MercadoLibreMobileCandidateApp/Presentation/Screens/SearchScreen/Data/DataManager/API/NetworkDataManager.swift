@@ -4,16 +4,15 @@
 //
 //  Created by Gustavo Adolfo Villada Molina on 23/04/25.
 //
-
+/*
 import Foundation
 import Combine
 
 class NetworkDataManager: NetworkDataManagerProtocol {
     private let baseURL: String = "https://api.mercadolibre.com"
     private let searchProductsEndPoint: String = "/sites/MCO/search?q="
+    private let productDetailsEndPoint: String = "/items/"
 
-    private typealias productDetailResponse = AnyPublisher<ProductDetailDTO, Error>
-    
     func searchProducts(for query: String) -> AnyPublisher<SearchProductResultsDTO, Error> {
         let urlString = "\(baseURL)\(searchProductsEndPoint)\(query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "")"
 
@@ -23,18 +22,12 @@ class NetworkDataManager: NetworkDataManagerProtocol {
         
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
-        //request.setValue("Bearer APP_USR-7810428096286422-042417-5d09b9bfdbc9597d956ee643e52be895-188204268", forHTTPHeaderField: "Authorization")
         
         let statusCodeMapper = HTTPStatusCodeMapper()
-
         
         return URLSession.shared.dataTaskPublisher(for: request)
             .tryMap { output in
                 _ = try statusCodeMapper.map(output.response)
-
-                if let jsonString = String(data: output.data, encoding: .utf8) {
-                    print("Response Data: \(jsonString)")
-                }
                 return output.data
             }
             .decode(type: SearchProductResultsDTO.self, decoder: JSONDecoder())
@@ -43,7 +36,7 @@ class NetworkDataManager: NetworkDataManagerProtocol {
     }
     
     func getProductDetail(for itemId: String) -> AnyPublisher<ProductDetailDTO, Error> {
-        let urlString = "\(baseURL)/items/\(itemId)"
+        let urlString = "\(baseURL)\(productDetailsEndPoint)\(itemId)"
         
         guard let url = URL(string: urlString) else {
             return Fail(error: URLError(.badURL)).eraseToAnyPublisher()
@@ -69,16 +62,39 @@ class NetworkDataManager: NetworkDataManagerProtocol {
             .receive(on: DispatchQueue.main)
             .eraseToAnyPublisher()
     }
-    /*
-    private func makeRequest(url: URL, headers: [String: String] = [:]) -> URLRequest {
-        var request = URLRequest(url: url)
-        request.httpMethod = "GET"
-        headers.forEach { key, value in
-            request.setValue(value, forHTTPHeaderField: key)
-        }
-        return request
-    }*/
 }
+*/
+import Foundation
+import Combine
 
+class NetworkDataManager: NetworkDataManagerProtocol {
+    private let networkClient: NetworkClientProtocol
 
+    private let searchProductsPath = "/sites/MCO/search"
+    private let productDetailsPath = "/items/"
+
+    init(networkClient: NetworkClientProtocol = DefaultNetworkClient()) {
+        self.networkClient = networkClient
+    }
+
+    func searchProducts(for query: String) -> AnyPublisher<SearchProductResultsDTO, AppError> {
+        let queryItems = [URLQueryItem(name: "q", value: query)]
+        return networkClient.performRequest(
+            endpoint: searchProductsPath,
+            method: "GET",
+            queryItems: queryItems, 
+            headers: nil
+        )
+    }
+
+    func getProductDetail(for itemId: String) -> AnyPublisher<ProductDetailDTO, AppError> {
+        let endpoint = productDetailsPath + itemId
+        return networkClient.performRequest(
+            endpoint: endpoint, 
+            method: "GET",
+            queryItems: nil,
+            headers: nil
+        )
+    }
+}
 

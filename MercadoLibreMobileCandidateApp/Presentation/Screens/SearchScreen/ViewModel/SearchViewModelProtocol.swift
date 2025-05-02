@@ -11,6 +11,7 @@ protocol SearchViewModelProtocol: ObservableObject {
     
     // MARK: Properties
     var localizables: AppLocalizables { get }
+    var constants: ScreenConstants { get }
     var query: String { get set }
     var errorType: AppError? { get set }
     var shouldShowSkeleton: Bool { get set }

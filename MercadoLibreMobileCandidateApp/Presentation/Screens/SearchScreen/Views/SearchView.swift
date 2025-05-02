@@ -15,17 +15,15 @@ struct SearchView<ViewModel: SearchViewModelProtocol>: View {
     @EnvironmentObject var navigation: MobileCandidateAppNavigation
     
     // MARK: - Body
-    
     var body: some View {
         ZStack {
-            Color.meliYellow.ignoresSafeArea()
+            backgroundMeli
             VStack {
-                Spacer(minLength: 50)
+                Spacer()
                 contentView
                 Spacer()
                 footerView
             }
-            .padding(.bottom, 20) // Espacio inferior para el footer
             NavigationLink(
                 destination: ResultViewWireframe.getResultView(viewModel: viewModel as! SearchViewModel),
                 isActive: $navigation.isResultsViewActive,
@@ -38,18 +36,16 @@ struct SearchView<ViewModel: SearchViewModelProtocol>: View {
     }
     
     // MARK: - Content View
-    
     private var contentView: some View {
-        VStack(spacing: 15) {
+        VStack(spacing: viewModel.constants.mainCardVerticalSpacing) {
             Text(viewModel.localizables.searchScreenHelloString)
-                .fontWeight(.semibold) // Más profesional que .bold
-                .font(.system(size: 28)) // Tamaño más grande
-                .foregroundColor(.meliBlue) // Color azul de Mercado Libre
-                .padding(.top, 20) // Espacio superior
+                .fontWeight(.semibold)
+                .font(.title)
+                .foregroundColor(.meliBlue)
             
             Text(viewModel.localizables.searchScreenHelloSubtitleString)
-                .font(.system(size: 18)) // Tamaño más legible
-                .foregroundColor(.gray) // Color gris suave
+                .font(.title3)
+                .foregroundColor(.gray)
             
             SearchBarCustom(
                 text: $viewModel.query,
@@ -59,32 +55,35 @@ struct SearchView<ViewModel: SearchViewModelProtocol>: View {
                     viewModel.onSearch()
                 }
             )
-            .padding(.horizontal, 20) // Padding para el SearchBar
         }
-        .frame(maxWidth: .infinity) // Ancho máximo
+        .frame(maxWidth: .infinity)
         .background(Color.white)
-        .padding(10) // Padding interior
+        .padding(viewModel.constants.mainCardInternalPadding)
         .background(Color.white)
-        .cornerRadius(16) // Bordes redondeados
-        .shadow(color: .gray.opacity(0.3), radius: 8, x: 0, y: 4) // Sombra
-        .padding(.horizontal, 24) // Padding horizontal
+        .cornerRadius(viewModel.constants.mainCardCornerRadius)
+        .shadow(color: .gray.opacity(0.3), radius: 8, x: 0, y: 4)
+        .padding(.horizontal, viewModel.constants.mainCardHorizontalPadding)
+    }
+    
+    // MARK: - Background View
+    private var backgroundMeli: some View {
+        ZStack {
+            GeometryReader { geometry in
+                Image("mercado_libre_background")
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: geometry.size.width, height: geometry.size.height)
+                    .overlay(
+                        Color.black.opacity(0.4)
+                    )
+            }
+            .ignoresSafeArea()
+        }
     }
     
     // MARK: - Footer View
-    
     private var footerView: some View {
-        VStack {
-            HStack {
-                Icons().mercadoLibreLogo
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 80, height: 50) // Tamaño más pequeño
-                
-                Text(viewModel.localizables.technicalTest)
-                    .font(.system(size: 12)) // Tamaño más pequeño
-                    .foregroundColor(.gray) // Color gris
-            }
-        }
+        FooterView()
     }
 }
 

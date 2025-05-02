@@ -13,8 +13,9 @@ enum AppError: Error, LocalizedError {
     case serverError(Int)
     case forbidenError
     case invalidURL
-    case decodingError
+    case decodingError(Error)
     case networkError(URLError)
+    case requestFailed(URLResponse?)
     case unknown(Error)
     case unableToFindJsonError
     case parsingError
@@ -37,6 +38,8 @@ enum AppError: Error, LocalizedError {
             return "Error al conectarse con el servidor"
         case .forbidenError:
             return "Error de permisos"
+        case .requestFailed(_):
+            return "Error de resquest"
         }
     }
 }

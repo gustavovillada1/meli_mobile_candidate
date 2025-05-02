@@ -25,6 +25,7 @@ public struct SearchViewWireframe {
     
     private static func createViewModel() -> SearchViewModel {
         let localizables: AppLocalizables = AppLocalizables()
+        let constants: ScreenConstants = ScreenConstants()
         
         let apiManager: NetworkDataManager = NetworkDataManager()
         
@@ -50,6 +51,7 @@ public struct SearchViewWireframe {
         
         return SearchViewModel(
             localizables: localizables,
+            constants: constants,
             searchProductsUseCase: searchProductsUseCase
         )
     }
