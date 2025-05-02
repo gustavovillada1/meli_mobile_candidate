@@ -6,6 +6,9 @@
 
 Busca productos y ve sus detalles con una interfaz moderna en SwiftUI.
 
+https://github.com/user-attachments/assets/6344276e-f95e-48b9-ad7e-eac5cfc9e461
+
+
 ## 🛠️ Tecnologías Clave 🛠️
 
 * SwiftUI, Combine, MVVM
