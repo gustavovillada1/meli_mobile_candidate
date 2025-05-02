@@ -1,0 +1,22 @@
+//
+//  localizables.strings
+//  MercadoLibreMobileCandidateApp
+//
+//  Created by Gustavo Adolfo Villada Molina on 1/05/25.
+//
+
+// MARK: Common Strings
+"results_string" = "Resultados";
+"new_string"     = "Nuevo";
+"used_String"    = "Reacondicionado";
+"technical_test" = "Prueba técnica";
+"loading_string" = "Cargando";
+
+// MARK: Search screen
+"search_screen_hello_string"          = "Hola";
+"search_screen_hello_subtitle_string" = "¿Qué deseas buscar hoy?";
+"search_screen_textfield_hint_string" = "Quizá un celular...";
+
+// MARK: Product detail screen
+"product_detail_screen_sold_quantity_subfix_string" = "Vendidos";
+"product_detail_screen_product_attributes_title"    = "Características del producto";

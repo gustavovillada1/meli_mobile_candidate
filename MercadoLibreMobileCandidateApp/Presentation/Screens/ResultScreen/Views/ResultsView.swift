@@ -11,7 +11,7 @@ struct ResultsView<ViewModel: SearchViewModel>: View {
     @StateObject var viewModel: ViewModel
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var navigation: MobileCandidateAppNavigation
-
+    
     var body: some View {
         ZStack() {
             VStack {
@@ -23,33 +23,23 @@ struct ResultsView<ViewModel: SearchViewModel>: View {
                     contentView
                 }
                 Spacer()
-                footerView
             }
             NavigationLink(
-                destination: ProductDetailViewWireframe.getProductDetailView(with: viewModel.productSelected),
+                destination: ProductDetailViewWireframe.getProductDetailView(with: viewModel.productIdSelected),
                 isActive: $navigation.isProductDetailViewActive,
                 label: {}
             )
         }
-        /*
-        .alert("Something went wrong", isPresented: $viewModel.shouldShowAlert) {
-                    Button("OK", role: .cancel) { }
-                    Button("Retry") {
-                        print("Retrying...")
-                    }
-                } message: {
-                    Text("Please try again later.")
-                }*/
     }
     
     private var footerView: some View {
         VStack {
             HStack {
-                Image("mercado-libre-logo")
+                Icons().mercadoLibreLogo
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(width: 80, height: 80)
-                Text("Prueba técnica")
+                    .frame(width: 80, height: 40)
+                Text(viewModel.localizables.technicalTest)
                     .font(.caption)
             }
         }
@@ -60,8 +50,8 @@ struct ResultsView<ViewModel: SearchViewModel>: View {
             ProgressView()
                 .progressViewStyle(CircularProgressViewStyle(tint: .yellow))
                 .scaleEffect(1.5)
-
-            Text("Buscando...")
+            
+            Text("\(viewModel.localizables.loadingString)...")
                 .font(.headline)
                 .foregroundColor(.gray)
         }
@@ -71,43 +61,63 @@ struct ResultsView<ViewModel: SearchViewModel>: View {
     }
     
     private var contentView: some View {
-        VStack {
-            if viewModel.products.isEmpty {
-                emptyResultsView
-            } else  {
-                ForEach(viewModel.products, id: \.id) { product in
-                    ListTileCustom(product.name)
-                        .subtitle(product.description)
-                        .price(product.price.toCurrencyFormat())
-                        .rating(product.rating)
-                        .imageUrl(product.imageUrl ?? "")
-                        .onTap {
-                            navigation.isProductDetailViewActive = true
-                            viewModel.didTapOnElement(for: product)
-                        }
-                
+        ScrollView {
+            VStack(spacing: 16) {
+                if let error: AppError = viewModel.errorType {
+                    ErrorView(
+                        error: error,
+                        didTapOnRetry: viewModel.onSearch,
+                        didTapOnCallJson: viewModel.didTapOnGetJson
+                    )
                 }
+                
+                if viewModel.products.isEmpty {
+                    emptyResultsView
+                } else {
+                    resultsHeaderView
+                    
+                    LazyVStack(spacing: 16) {
+                        ForEach(viewModel.products, id: \.id) { product in
+                            ListTileCustom(product.title)
+                                .subtitle(ProductDetailAttributesHelper.getConditionString(product.condition))
+                                .price(product.price.toCurrencyFormat())
+                                .imageUrl(product.thumbnail ?? String())
+                                .onTap {
+                                    navigation.isProductDetailViewActive = true
+                                    viewModel.didTapOnElement(for: product.id)
+                                }
+                            
+                        }
+                    }
+                }
+                
+                Spacer(minLength: 20)
+                footerView
             }
-            Spacer()
+            .padding(10)
         }
-        .padding(20)
+    }
+    
+    private var resultsHeaderView: some View {
+        VStack(alignment: .leading, spacing: 4) {
+            Text(viewModel.query)
+                .font(.title3)
+                .fontWeight(.semibold)
+            
+            Text("\(viewModel.products.count) \(viewModel.localizables.resultsString.lowercased())")
+                .font(.subheadline)
+                .foregroundColor(.secondary)
+                .padding(.bottom, 10)
+        }
     }
     
     private var emptyResultsView: some View {
-        VStack {
-            
-        }
+        VStack { }
     }
     
     private var topBarView: some View {
-        TopBarCustom(title: "Resultados", onBack: {
+        TopBarCustom(title: viewModel.localizables.resultsString, onBack: {
             presentationMode.wrappedValue.dismiss()
         })
     }
 }
-
-/*
-#Preview {
-    ResultsView()
-}
-*/

@@ -10,16 +10,22 @@ import Foundation
 protocol SearchViewModelProtocol: ObservableObject {
     
     // MARK: Properties
+    var localizables: AppLocalizables { get }
     var query: String { get set }
+    var errorType: AppError? { get set }
     var shouldShowSkeleton: Bool { get set }
     var shouldShowAlert: Bool { get set }
-    var products: [MobileCandidateProductModel] { get set }
-    var productSelected: MobileCandidateProductModel { get set }
-    var searchProductsUseCase: SearchProductsUseCaseProtocol { get }
+    var shouldLoadFromJSON: Bool { get set }
+    var products: [ProductItemModel] { get set }
+    var productIdSelected: String { get set }
+    var searchProductsUseCase: SearchProductUseCaseProtocol { get }
     
     // MARK: Functions
     func onAppear()
     func onSearch()
-    func didTapOnElement(for item: MobileCandidateProductModel)
+    func didTapOnElement(for productId: String)
+    func cleanProducts()
+    func didTapOnCancelAlert()
+    func didTapOnGetJson()
 
 }

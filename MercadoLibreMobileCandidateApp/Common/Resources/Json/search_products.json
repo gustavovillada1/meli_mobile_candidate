@@ -1,0 +1,78 @@
+{
+  "site_id": "MLA",
+  "query": "iphone",
+  "paging": {
+    "total": 2593,
+    "primary_results": 50,
+    "offset": 0,
+    "limit": 50
+  },
+  "results": [
+    {
+      "id": "MLA123456789",
+      "title": "iPhone 13 Pro Max 256 Gb Azul Sierra",
+      "price": 5100000,
+      "currency_id": "ARS",
+      "available_quantity": 3,
+      "sold_quantity": 150,
+      "condition": "new",
+      "permalink": "https://www.mercadolibre.com.ar/MLA-123456789",
+      "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_2X_932467-MLA47776357598_102021-F.webp"
+    },
+    {
+      "id": "MLA123412789",
+      "title": "iPhone 13 Pro Max 256 Gb Grafito",
+      "price": 450000,
+      "currency_id": "ARS",
+      "available_quantity": 3,
+      "sold_quantity": 150,
+      "condition": "new",
+      "permalink": "https://www.mercadolibre.com.ar/MLA-123456789",
+      "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_2X_851545-MLA47777198395_102021-F.webp"
+    },
+    {
+      "id": "MLA123453289",
+      "title": "iPhone 16 Pro Max 256 Gb Oro",
+      "price": 7450000,
+      "currency_id": "ARS",
+      "available_quantity": 3,
+      "sold_quantity": 150,
+      "condition": "new",
+      "permalink": "https://www.mercadolibre.com.ar/MLA-123456789",
+      "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_2X_946508-MCO84204147943_042025-F.webp"
+    },
+    {
+      "id": "MLA1234564539",
+      "title": "iPhone 13 Pro Max 256 Gb Purpura",
+      "price": 3500000,
+      "currency_id": "ARS",
+      "available_quantity": 3,
+      "sold_quantity": 150,
+      "condition": "new",
+      "permalink": "https://www.mercadolibre.com.ar/MLA-123456789",
+      "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_2X_616195-MCO83228004145_032025-F.webp"
+    },
+    {
+      "id": "MLA987654321",
+      "title": "Apple iPhone 12 128 GB Blanco",
+      "price": 3900000,
+      "currency_id": "ARS",
+      "available_quantity": 5,
+      "sold_quantity": 200,
+      "condition": "new",
+      "permalink": "https://www.mercadolibre.com.ar/MLA-987654321",
+      "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_2X_901333-MCO43763937017_102020-F.webp"
+    },
+    {
+      "id": "MLA192837465",
+      "title": "iPhone 11 64 GB Negro",
+      "price": 2900000,
+      "currency_id": "ARS",
+      "available_quantity": 7,
+      "sold_quantity": 300,
+      "condition": "new",
+      "permalink": "https://www.mercadolibre.com.ar/MLA-192837465",
+      "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_2X_620960-MLU77638273465_072024-F.webp"
+    }
+  ]
+}

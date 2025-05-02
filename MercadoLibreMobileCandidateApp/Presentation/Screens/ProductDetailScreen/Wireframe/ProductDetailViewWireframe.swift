@@ -10,8 +10,8 @@ import SwiftUI
 public struct ProductDetailViewWireframe {
     
     @ViewBuilder
-    public static func getProductDetailView(with product: MobileCandidateProductModel) -> some View {
-        let viewModel: ProductDetailViewModel = createViewModel(with: product)
+    public static func getProductDetailView(with productId: String) -> some View {
+        let viewModel: ProductDetailViewModel = createViewModel(with: productId)
         let productDetailView: ProductDetailView = ProductDetailView(viewModel: viewModel)
         
         productDetailView
@@ -19,9 +19,29 @@ public struct ProductDetailViewWireframe {
         .navigationViewStyle(StackNavigationViewStyle())
     }
     
-    private static func createViewModel(with product: MobileCandidateProductModel) -> ProductDetailViewModel {
+    private static func createViewModel(with productId: String) -> ProductDetailViewModel {
+        let localizables: AppLocalizables = AppLocalizables()
+        let localManager: LocalDataManagerProtocol = LocalDataManager()
+        let apiManager: NetworkDataManagerProtocol = NetworkDataManager()
+        let dataMapper: RepositoryDataMapper = RepositoryDataMapper()
+        let networkErrorMapper: NetworkErrorMapper = NetworkErrorMapper()
+        let domainMapper: DomainMapper = DomainMapper()
+        let repository: Repository = Repository(
+            errorMapper: networkErrorMapper,
+            dataMapper: dataMapper,
+            apiManager: apiManager,
+            localManager: localManager
+        )
+        let getProductDetailsUseCase: GetProductDetailsUseCase = GetProductDetailsUseCase(
+            repository: repository,
+            domainMapper: domainMapper
+        )
+        let dependencies: ProductDetailViewDependencies = ProductDetailViewDependencies(productId: productId)
         
-        let dependencies: ProductDetailViewDependencies = ProductDetailViewDependencies(product: product)
-        return ProductDetailViewModel(dependencies: dependencies)
+        return ProductDetailViewModel(
+            dependencies: dependencies,
+            localizables: localizables,
+            getProductDetailsUseCase: getProductDetailsUseCase
+        )
     }
 }

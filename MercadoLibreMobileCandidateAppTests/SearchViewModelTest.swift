@@ -32,7 +32,7 @@ final class SearchViewModelTests: XCTestCase {
     func test_onSearch_successResponse_shouldUpdateProductsAndHideSkeleton() {
         // Given
         let products = [
-            MobileCandidateProductModel(id: "1", name: "iPhone", description: "", rating: 5, price: 1000, imageUrl: "")
+            ProductItemModel(id: "1", name: "iPhone", description: "", rating: 5, price: 1000, imageUrl: "")
         ]
         mockUseCase.result = .success(products)
         viewModel.query = "iPhone"

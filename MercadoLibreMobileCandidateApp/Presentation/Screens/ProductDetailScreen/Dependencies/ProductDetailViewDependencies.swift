@@ -8,5 +8,5 @@
 import Foundation
 
 struct ProductDetailViewDependencies {
-    var product: MobileCandidateProductModel
+    var productId: String
 }

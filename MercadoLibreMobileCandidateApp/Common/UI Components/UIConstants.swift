@@ -21,8 +21,15 @@ struct UIConstants {
     var horizontalSpacingTen: CGFloat { 10.0 }
     var internalPadding: CGFloat { 5.0 }
     var externalRadius: CGFloat { 12.0 }
-    var imageSize: CGFloat { 80.0 }
+    var imageSize: CGFloat { 115.0 }
     var imageCornerRadius: CGFloat { 8.0 }
     var starSize: CGFloat { 10.0 }
     var spacingTwo: CGFloat { 5.0 }
+}
+
+// MARK: - Assets
+extension Color {
+    static let meliGreen = Color(red: 0.0, green: 0.62, blue: 0.45)
+    static let meliYellow = Color(red: 1, green: 0.84, blue: 0)
+    static let meliBlue = Color(red: 0, green: 0.44, blue: 0.80)
 }

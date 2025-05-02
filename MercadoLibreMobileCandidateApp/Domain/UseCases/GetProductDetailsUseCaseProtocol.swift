@@ -9,20 +9,20 @@ import Foundation
 import Combine
 
 protocol GetProductDetailsUseCaseProtocol {
-    func execute(itemId: String) -> AnyPublisher<MobileCandidateProductModel, MobileCandidateAPIError>
+    func execute(itemId: String, fromJson: Bool) -> AnyPublisher<ProductDetailModel, AppError>
 }
 
 final class GetProductDetailsUseCase: GetProductDetailsUseCaseProtocol {
-    private let repository: MobileCandidateRepositoryProtocol
-    private let domainMapper: MobileCandidateDomainMapper
+    private let repository: RepositoryProtocol
+    private let domainMapper: DomainMapper
     
-    init(repository: MobileCandidateRepositoryProtocol, domainMapper: MobileCandidateDomainMapper) {
+    init(repository: RepositoryProtocol, domainMapper: DomainMapper) {
         self.repository = repository
         self.domainMapper = domainMapper
     }
     
-    func execute(itemId: String) -> AnyPublisher<MobileCandidateProductModel, MobileCandidateAPIError> {
-        repository.getProductDetail(for: itemId)
+    func execute(itemId: String, fromJson: Bool) -> AnyPublisher<ProductDetailModel, AppError> {
+        repository.getProductDetail(for: itemId, fromJson: fromJson)
             .map(domainMapper.mapProductDetail)
             .eraseToAnyPublisher()
     }

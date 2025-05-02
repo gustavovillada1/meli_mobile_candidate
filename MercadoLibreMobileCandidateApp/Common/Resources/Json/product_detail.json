@@ -1,0 +1,149 @@
+{
+  "id": "MLA123456789",
+  "site_id": "MLA",
+  "title": "iPhone 13 Pro Max 128 GB - Sierra Blue",
+  "subtitle": null,
+  "seller_id": 123456789,
+  "category_id": "MLA1055",
+  "official_store_id": null,
+  "price": 5999999,
+  "base_price": 5999999,
+  "original_price": null,
+  "currency_id": "COP",
+  "initial_quantity": 100,
+  "available_quantity": 15,
+  "sold_quantity": 120,
+  "buying_mode": "buy_it_now",
+  "listing_type_id": "gold_special",
+  "start_time": "2025-04-20T14:00:00.000Z",
+  "stop_time": "2025-10-20T14:00:00.000Z",
+  "condition": "new",
+  "permalink": "https://articulo.mercadolibre.com.co/MLA-123456789-iphone-13-pro-max-128-gb-sierra-blue",
+  "thumbnail": "https://co.tiendasishop.com/cdn/shop/files/IMG-12496118_d3a06b05-ba18-4aaf-a3ac-c1372d9d8490.jpg?v=1738685882",
+  "secure_thumbnail": "https://http2.mlstatic.com/D_123456-MLA123456789_1234-O.jpg",
+  "pictures": [
+    {
+      "id": "123",
+      "url": "https://http2.mlstatic.com/D_123456-MLA123456789_1234-O.jpg",
+      "secure_url": "https://http2.mlstatic.com/D_123456-MLA123456789_1234-O.jpg",
+      "size": "500x500",
+      "max_size": "1000x1000",
+      "quality": ""
+    },
+    {
+      "id": "456",
+      "url": "https://http2.mlstatic.com/D_789012-MLA123456789_5678-O.jpg",
+      "secure_url": "https://http2.mlstatic.com/D_789012-MLA123456789_5678-O.jpg",
+      "size": "500x500",
+      "max_size": "1000x1000",
+      "quality": ""
+    }
+  ],
+  "video_id": null,
+  "descriptions": [],
+  "accepts_mercadopago": true,
+  "non_mercado_pago_payment_methods": [],
+  "shipping": {
+    "mode": "me2",
+    "methods": [],
+    "tags": ["self_service_in", "mandatory_free_shipping"],
+    "dimensions": null,
+    "local_pick_up": false,
+    "free_shipping": true,
+    "logistic_type": "drop_off",
+    "store_pick_up": false
+  },
+  "international_delivery_mode": "none",
+  "seller_address": {
+    "city": {
+      "id": "CO-PER",
+      "name": "Pereira"
+    },
+    "state": {
+      "id": "CO-RIS",
+      "name": "Risaralda"
+    },
+    "country": {
+      "id": "CO",
+      "name": "Colombia"
+    },
+    "search_location": {
+      "neighborhood": {
+        "id": "TUxCQ1BFUjYwOTU",
+        "name": "Pereira"
+      },
+      "city": {
+        "id": "TUxCQ1BFUjYwOTU",
+        "name": "Pereira"
+      },
+      "state": {
+        "id": "TUxCQ1JJUzYwOTg",
+        "name": "Risaralda"
+      }
+    },
+    "id": 123456789
+  },
+  "seller_contact": null,
+  "location": {},
+  "attributes": [
+    {
+      "id": "BRAND",
+      "name": "Marca",
+      "value_id": "9344",
+      "value_name": "Apple",
+      "value_struct": null,
+      "values": [
+        {
+          "id": "9344",
+          "name": "Apple",
+          "struct": null
+        }
+      ],
+      "attribute_group_id": "OTHERS",
+      "attribute_group_name": "Otros"
+    },
+    {
+      "id": "MODEL",
+      "name": "Modelo",
+      "value_id": null,
+      "value_name": "iPhone 13 Pro Max",
+      "value_struct": null,
+      "values": [
+        {
+          "id": null,
+          "name": "iPhone 13 Pro Max",
+          "struct": null
+        }
+      ],
+      "attribute_group_id": "OTHERS",
+      "attribute_group_name": "Otros"
+    },
+    {
+      "id": "COLOR",
+      "name": "Color",
+      "value_id": null,
+      "value_name": "Sierra Blue",
+      "value_struct": null,
+      "values": [
+        {
+          "id": null,
+          "name": "Sierra Blue",
+          "struct": null
+        }
+      ],
+      "attribute_group_id": "OTHERS",
+      "attribute_group_name": "Otros"
+    }
+  ],
+  "warranty": "12 meses por el fabricante",
+  "catalog_product_id": null,
+  "domain_id": "MLA-CELLPHONES",
+  "parent_item_id": null,
+  "differential_pricing": null,
+  "deal_ids": [],
+  "automatic_relist": false,
+  "date_created": "2025-04-20T14:00:00.000Z",
+  "last_updated": "2025-04-25T10:00:00.000Z",
+  "health": null,
+  "catalog_listing": false
+}

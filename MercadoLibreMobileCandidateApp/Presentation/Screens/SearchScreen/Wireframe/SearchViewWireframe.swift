@@ -24,25 +24,33 @@ public struct SearchViewWireframe {
     }
     
     private static func createViewModel() -> SearchViewModel {
-        let apiManager: MobileCandidateAPIDataManager = MobileCandidateAPIDataManager()
+        let localizables: AppLocalizables = AppLocalizables()
         
-        let errorMapper: MobileCandidateErrorMapper = MobileCandidateErrorMapper()
+        let apiManager: NetworkDataManager = NetworkDataManager()
         
-        let dataMapper: MobileCandidateRepositoryDataMapper = MobileCandidateRepositoryDataMapper()
+        let localManager: LocalDataManager = LocalDataManager()
         
-        let repository: MobileCandidateRepository = MobileCandidateRepository(
+        let errorMapper: NetworkErrorMapper = NetworkErrorMapper()
+        
+        let dataMapper: RepositoryDataMapper = RepositoryDataMapper()
+        
+        let repository: Repository = Repository(
             errorMapper: errorMapper,
             dataMapper: dataMapper,
-            apiManager: apiManager
+            apiManager: apiManager,
+            localManager: localManager
         )
         
-        let domainMapper: MobileCandidateDomainMapper = MobileCandidateDomainMapper()
+        let domainMapper: DomainMapper = DomainMapper()
         
         let searchProductsUseCase: SearchProductUseCase = SearchProductUseCase(
             repository: repository,
             domainMapper: domainMapper
         )
         
-        return SearchViewModel(searchProductsUseCase: searchProductsUseCase)
+        return SearchViewModel(
+            localizables: localizables,
+            searchProductsUseCase: searchProductsUseCase
+        )
     }
 }

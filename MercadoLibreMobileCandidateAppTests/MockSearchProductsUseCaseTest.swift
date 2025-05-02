@@ -9,10 +9,10 @@ import Foundation
 import Combine
 @testable import MercadoLibreMobileCandidateApp
 
-class MockSearchProductsUseCase: SearchProductsUseCaseProtocol {
-    var result: Result<[MobileCandidateProductModel], MobileCandidateAPIError> = .success([])
+class MockSearchProductsUseCase: SearchProductUseCaseProtocol {
+    var result: Result<[ProductItemModel], AppError> = .success([])
     
-    func execute(query: String) -> AnyPublisher<[MobileCandidateProductModel], MobileCandidateAPIError> {
+    func execute(query: String) -> AnyPublisher<[ProductItemModel], AppError> {
         return result.publisher
             .delay(for: .seconds(0), scheduler: DispatchQueue.main) // Simular async
             .eraseToAnyPublisher()
