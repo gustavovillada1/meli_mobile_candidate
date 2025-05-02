@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "mercado-libre-logo.png",
+      "filename" : "mercado-libre-icon.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "mercado-libre-logo 1.png",
+      "filename" : "mercado-libre-icon 1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "mercado-libre-logo 2.png",
+      "filename" : "mercado-libre-icon 2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

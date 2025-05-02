@@ -1,6 +1,7 @@
 {
   "images" : [
     {
+      "filename" : "mercado-libre-icon.jpeg",
       "idiom" : "universal",
       "platform" : "ios",
       "size" : "1024x1024"
